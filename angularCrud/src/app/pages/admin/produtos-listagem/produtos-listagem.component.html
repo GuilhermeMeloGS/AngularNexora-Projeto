@@ -1,0 +1,52 @@
+<app-admin-sidebar />
+
+<div class="admin-main">
+  <header class="admin-page-header">
+    <div>
+      <h1 class="admin-page-title">Listagem de produtos</h1>
+      <p class="admin-page-subtitle">Gerencie o catálogo e estoque dos seus produtos.</p>
+    </div>
+    <a routerLink="/admin/produtos/cadastro" class="btn btn--primary">+ Novo produto</a>
+  </header>
+
+  <div class="admin-content">
+    <div class="admin-list-toolbar">
+      <div class="admin-search-wrap">
+        <span class="admin-search-icon">🔍</span>
+        <input type="search" class="admin-search-input" placeholder="Buscar produto..." />
+      </div>
+    </div>
+    <div class="admin-table-wrapper">
+      <table class="admin-products-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="admin-table-cell-product">
+              <div class="admin-table-cell-product-thumb" style="background:#e8f4f0">🖥️</div>
+              <div>
+                <div>Monitor UltraWide 34"</div>
+                <div class="admin-table-cell-product-sku">MON-001</div>
+              </div>
+            </td>
+            <td><span class="status-badge status-badge--category">Eletrônicos</span></td>
+            <td class="admin-table-cell-price">R$ 2.499,00</td>
+            <td class="admin-table-cell-stock">72 un.</td>
+            <td><span class="status-badge status-badge--active">Ativo</span></td>
+            <td class="admin-table-cell-actions">
+              <a routerLink="/admin/produtos/cadastro" class="admin-action-btn" title="Editar">✏️</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

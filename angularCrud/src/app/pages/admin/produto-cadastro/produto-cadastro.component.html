@@ -1,0 +1,41 @@
+<app-admin-sidebar />
+
+<div class="admin-main">
+  <header class="admin-page-header">
+    <div>
+      <h1 class="admin-page-title">Cadastrar produto</h1>
+      <p class="admin-page-subtitle">Preencha os dados do novo produto.</p>
+    </div>
+    <a routerLink="/admin/produtos" class="btn btn--secondary">← Voltar</a>
+  </header>
+
+  <div class="admin-content">
+    <form class="admin-product-form" (submit)="$event.preventDefault()">
+      <section class="admin-form-section">
+        <h2 class="admin-form-section-title">Informações básicas</h2>
+        <div class="admin-form-grid">
+          <div class="form-field form-field--full">
+            <label for="produto-nome">Nome do produto *</label>
+            <div class="form-input-wrap">
+              <input type="text" id="produto-nome" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="produto-categoria">Categoria *</label>
+            <div class="form-input-wrap form-input-wrap--select">
+              <select id="produto-categoria" required>
+                <option value="" disabled selected>Selecione...</option>
+                <option>Eletrônicos</option>
+                <option>Periféricos</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="admin-form-actions">
+        <a routerLink="/admin/produtos" class="btn btn--secondary btn--lg">Cancelar</a>
+        <button type="submit" class="btn btn--primary btn--lg">Salvar produto</button>
+      </div>
+    </form>
+  </div>
+</div>
