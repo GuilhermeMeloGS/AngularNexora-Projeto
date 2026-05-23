@@ -20,7 +20,7 @@ export class UsuariosComponent implements OnInit {
   excluir(id: number){
     if (id){
       this.service.excluir(id).subscribe(()=>{
-        window.location.reload
+        window.location.reload()
       })
     }
   }
