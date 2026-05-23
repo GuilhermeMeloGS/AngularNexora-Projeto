@@ -12,14 +12,21 @@ import { CadastroPessoaService, Usuarios } from '../../services/cadastro-pessoa.
 })
 export class CadastroComponent {
   titulo: string = 'Cadastro de Pessoas';
-  usuario: Usuarios = {} as Usuarios;
+  usuario: Usuarios = {
+    nome: '',
+    cpf: '',
+    dataDeNascimento: '',
+    senha: '',
+    email: '',
+    perfil: 'USER'
+  };
 
   constructor(private service: CadastroPessoaService, private router: Router,
     private route: ActivatedRoute,) { }
 
   cadastrar() {
     this.service.incluir(this.usuario).subscribe(() => {
-      this.router.navigate(['/usuarios'])
+      this.router.navigate(['/'])
     })
   }
 }

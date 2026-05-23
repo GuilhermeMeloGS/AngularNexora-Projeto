@@ -39,6 +39,7 @@
         <button class="btn btn--primary btn--full btn--lg"
                 (click)="clicarLogin()"
         > Entrar</button>
+        <p class="erro" *ngIf="erro">{{ erro }}</p>
 
       </form>
       <div class="login-divider"><span>ou</span></div>

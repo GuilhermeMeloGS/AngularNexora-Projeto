@@ -1,7 +1,7 @@
 <div class="pageProduto">
   <div class="header-lista">
     <h2>Listagem de Produtos</h2>
-    <button class="btn-novo" [routerLink]="['/admin/produtos/cadastro']">
+    <button *ngIf="isAdmin" class="btn-novo" [routerLink]="['/admin/produtos/cadastro']">
       + Adicionar Produto
     </button>
   </div>
@@ -13,7 +13,7 @@
         <th>Nome</th>
         <th>Descrição</th>
         <th>Preço</th>
-        <th>Ações</th>
+        <th *ngIf="isAdmin">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -22,15 +22,14 @@
         <td>{{ p.nome }}</td>
         <td>{{ p.descricao }}</td>
         <td>R$ {{ p.preco | number:'1.2-2' }}</td>
-        <td>
-          <button 
-            class="btn-editar" 
+        <td *ngIf="isAdmin">
+          <button
+            class="btn-editar"
             [routerLink]="['/admin/produtos/cadastro', p.id]">
             Editar
           </button>
-          
-          <button 
-            class="btn-excluir" 
+          <button
+            class="btn-excluir"
             (click)="excluir(p.id!)">
             Excluir
           </button>

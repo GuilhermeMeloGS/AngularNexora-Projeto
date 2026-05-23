@@ -5,11 +5,23 @@
     <li><a routerLink="/" fragment="secao-produtos-destaque">Produtos</a></li>
     <li><a routerLink="/" fragment="secao-beneficios">Sobre</a></li>
     <li><a routerLink="/" fragment="secao-chamada-acao">Contato</a></li>
+    <li *ngIf="isAdmin">
+      <a routerLink="/admin" class="nav-admin">Administrador</a>
+    </li>
   </ul>
 
   <div class="landing-header-actions">
-    <a routerLink="/login" class="btn btn--secondary">Entrar</a>
-    <a routerLink="/cadastrar" class="btn btn--primary">Começar</a>
+    <!-- Não logado -->
+    <ng-container *ngIf="!isLogado">
+      <a routerLink="/login"    class="btn btn--secondary">Entrar</a>
+      <a routerLink="/cadastrar" class="btn btn--primary">Começar</a>
+    </ng-container>
+
+    <!-- Logado -->
+    <ng-container *ngIf="isLogado">
+      <a routerLink="/admin/produtos" class="btn btn--secondary">Ver Produtos</a>
+      <button class="btn btn--primary" (click)="sair()">Sair</button>
+    </ng-container>
   </div>
 
   <button type="button" class="landing-menu-toggle" aria-label="Abrir menu de navegação">

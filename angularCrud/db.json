@@ -1,5 +1,15 @@
 {
   "produtos": [],
-  "usuarios": [],
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Admin",
+      "email": "admin@admin.com",
+      "senha": "admin",
+      "cpf": "000.000.000-00",
+      "dataDeNascimento": "1990-01-01",
+      "perfil": "ADMIN"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
