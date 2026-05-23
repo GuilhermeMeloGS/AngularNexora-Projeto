@@ -1,41 +1,41 @@
-<app-admin-sidebar />
-
-<div class="admin-main">
-  <header class="admin-page-header">
-    <div>
-      <h1 class="admin-page-title">Cadastrar produto</h1>
-      <p class="admin-page-subtitle">Preencha os dados do novo produto.</p>
+<div class="admin-page">
+  <div class="admin-main">
+    <div class="admin-page-header">
+      <div>
+        <h2 class="admin-page-title">{{ idAlterar ? 'Editar Produto' : 'Novo Produto' }}</h2>
+        <p class="admin-page-subtitle">Preencha os dados abaixo</p>
+      </div>
     </div>
-    <a routerLink="/admin/produtos" class="btn btn--secondary">← Voltar</a>
-  </header>
 
-  <div class="admin-content">
-    <form class="admin-product-form" (submit)="$event.preventDefault()">
-      <section class="admin-form-section">
-        <h2 class="admin-form-section-title">Informações básicas</h2>
-        <div class="admin-form-grid">
-          <div class="form-field form-field--full">
-            <label for="produto-nome">Nome do produto *</label>
-            <div class="form-input-wrap">
-              <input type="text" id="produto-nome" required />
+    <div class="admin-content">
+      <form class="admin-product-form" (ngSubmit)="submeter()">
+        <div class="admin-form-section">
+          <h3 class="admin-form-section-title">Informações do Produto</h3>
+          <div class="admin-form-grid">
+            <div>
+              <label>Nome:</label>
+              <input type="text" [(ngModel)]="produto.nome" name="nome" required>
             </div>
-          </div>
-          <div class="form-field">
-            <label for="produto-categoria">Categoria *</label>
-            <div class="form-input-wrap form-input-wrap--select">
-              <select id="produto-categoria" required>
-                <option value="" disabled selected>Selecione...</option>
-                <option>Eletrônicos</option>
-                <option>Periféricos</option>
-              </select>
+            <div>
+              <label>Descrição:</label>
+              <input type="text" [(ngModel)]="produto.descricao" name="descricao" required>
+            </div>
+            <div>
+              <label>Preço:</label>
+              <input type="number" [(ngModel)]="produto.preco" name="preco" required>
+            </div>
+            <div>
+              <label>Imagem (URL):</label>
+              <input type="text" [(ngModel)]="produto.imagem" name="imagem">
             </div>
           </div>
         </div>
-      </section>
-      <div class="admin-form-actions">
-        <a routerLink="/admin/produtos" class="btn btn--secondary btn--lg">Cancelar</a>
-        <button type="submit" class="btn btn--primary btn--lg">Salvar produto</button>
-      </div>
-    </form>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn-salvar">Salvar</button>
+          <button type="button" [routerLink]="['/admin/produtos']" class="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

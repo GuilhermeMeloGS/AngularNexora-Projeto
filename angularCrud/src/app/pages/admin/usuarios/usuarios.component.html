@@ -1,0 +1,37 @@
+<div class="pageUsuario">
+  <div class="header-lista">
+    <h2>Listagem de Usuários</h2>
+  </div>
+
+  <table class="tabela-crud">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>CPF</th>
+        <th>Data de Nascimento</th>
+        <th>Senha</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(usuarios of listaUsuarios; track usuarios ){
+      <tr>
+        <td>{{ usuarios.id}}</td>
+        <td>{{ usuarios.nome}}</td>
+        <td>{{ usuarios.email }}</td>
+        <td>{{ usuarios.cpf }}</td>
+        <td>{{ usuarios.dataDeNascimento }}</td>
+        <td>{{ usuarios.senha }}</td>
+        <td>
+          <button class="btn-excluir" (click)="excluir(usuarios.id!)"></button>
+        </td>
+      </tr>
+    }
+
+      <tr *ngIf="listaUsuarios.length === 0">
+        <td colspan="6">Nenhum usuário encontrado.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

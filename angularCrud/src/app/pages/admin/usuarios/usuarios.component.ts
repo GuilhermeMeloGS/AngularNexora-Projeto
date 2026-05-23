@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { CadastroPessoaService, Usuarios } from '../../../services/cadastro-pessoa.service';
+
+@Component({
+  selector: 'app-usuarios',
+  standalone: true,
+  imports: [],
+  templateUrl: './usuarios.component.html',
+  styleUrl: './usuarios.component.css'
+})
+export class UsuariosComponent implements OnInit {
+  listaUsuarios: Usuarios[] = []
+
+  constructor(private service: CadastroPessoaService){}
+
+  ngOnInit(): void {
+    this.service.listar().subscribe((usuarios)=>{this.listaUsuarios = usuarios})
+  }
+
+  excluir(id: number){}
+
+}

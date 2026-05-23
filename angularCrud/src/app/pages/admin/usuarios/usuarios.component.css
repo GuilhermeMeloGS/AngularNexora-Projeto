@@ -2,34 +2,26 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
-.pageProduto {
+.pageUsuario {
     min-height: 100vh;
-    width: 100%; 
+    width: 100%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 100px 20px;
 }
 
 .header-lista {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .header-lista h2 {
@@ -39,26 +31,8 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.btn-novo {
-    padding: 14px 28px;
-    background: white;
-    color: #667eea;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-novo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-
 .tabela-crud {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     background: white;
@@ -96,24 +70,24 @@
     border-bottom: none;
 }
 
-.btn-editar {
-    padding: 8px 18px;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 6px;
+/* Coluna ID */
+.tabela-crud tbody td:first-child {
+    color: #999;
     font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    margin-right: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
 }
 
-.btn-editar:hover {
-    background: #5a6fd6;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+/* Coluna CPF */
+.tabela-crud tbody td:nth-child(4) {
+    font-weight: 700;
+    color: #667eea;
+}
+
+/* Mensagem de vazio */
+.tabela-crud tbody td[colspan] {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 1rem;
 }
 
 .btn-excluir {
@@ -134,43 +108,16 @@
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
-/* Coluna de preço */
-.tabela-crud tbody td:nth-child(4) {
-    font-weight: 700;
-    color: #667eea;
-}
-
-/* Coluna ID */
-.tabela-crud tbody td:first-child {
-    color: #999;
-    font-weight: 600;
-}
-
-/* Mensagem de vazio */
-.tabela-crud tbody td[colspan] {
-    text-align: center;
-    padding: 40px;
-    color: #999;
-    font-size: 1rem;
-}
-
 @media (max-width: 768px) {
-    .header-lista {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-    }
-    
     .tabela-crud {
         font-size: 0.85rem;
     }
-    
+
     .tabela-crud thead th,
     .tabela-crud tbody td {
         padding: 12px 8px;
     }
-    
-    .btn-editar,
+
     .btn-excluir {
         padding: 6px 12px;
         font-size: 0.75rem;

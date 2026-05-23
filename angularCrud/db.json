@@ -1,0 +1,422 @@
+{
+  "produtos": [
+    {
+      "nome": "321321",
+      "descricao": "312321",
+      "preco": 0,
+      "imagem": "321321",
+      "id": "5iFYyAsVrow"
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "dadsdsa",
+      "dataDeNascimento": "275760-03-12",
+      "cpf": "321312312312312",
+      "senha": "132312312",
+      "email": "12312312312",
+      "id": "RN2l0pE0Uow"
+    },
+    {
+      "nome": "dadsdsa",
+      "dataDeNascimento": "275760-03-12",
+      "cpf": "321312312312312",
+      "senha": "132312312",
+      "email": "12312312312",
+      "id": "Z6GSG629WyU"
+    },
+    {
+      "nome": "dadsdsa",
+      "dataDeNascimento": "275760-03-12",
+      "cpf": "321312312312312",
+      "senha": "132312312",
+      "email": "12312312312",
+      "id": "Jp82uIak_rs"
+    },
+    {
+      "nome": "dadsdsa",
+      "dataDeNascimento": "275760-03-12",
+      "cpf": "321312312312312",
+      "senha": "132312312",
+      "email": "12312312312",
+      "id": "1sitdgRCnWs"
+    },
+    {
+      "nome": "dadsdsa",
+      "dataDeNascimento": "275760-03-12",
+      "cpf": "321312312312312",
+      "senha": "132312312",
+      "email": "12312312312",
+      "id": "0SF3ZEQ6Akk"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "BFMBsG3CXIk"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "e4TRQK05yDM"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "AeAvLduU53E"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "QDWyHZt-jx0"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "r5UyepXSYq0"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "M0rid7wtXbE"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "Zr0Fa8bWavU"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "eymAFKCteuw"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "O_SauIbWaaQ"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "0Si8reV-YUk"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "DFg8Dc35s4k"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "1VFWoZ7FYhI"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "H-rXGo7q8u8"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "RT8RkQhanEs"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "oKF3NdMmYSM"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "bW5Ifp_6Zao"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "2-1lJdEH47Y"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "_7yGHKa1X2o"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "0eYGV5LdbWE"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "6VI-YR0_M5U"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "LItytUYCVx0"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "bAkeDvSfzlM"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "cIILx8uD6_o"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "5p91s5KI3gY"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "vrumAPPUkQk"
+    },
+    {
+      "nome": "312321",
+      "email": "3213231232",
+      "senha": "321321321321",
+      "cpf": "321321321321",
+      "dataDeNascimento": "3123-03-12",
+      "id": "34JoMQ8vrZs"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "fmwheafswAU"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "U9awPrhpYPo"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "O248sBcsTxQ"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "bTwZGgf_8ds"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "oQY_fuFfUjE"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "d7rd1L2KKbE"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "AgzoOTXvp5A"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "WzFh-oWOclM"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "vVpEuNbJ9Z4"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "Z2Elf-w-aws"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "T7R1Hj-YP14"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "-advceod1u8"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "hXaydLwyLrU"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "jAFfhj8SA4k"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "LC4lg_AeGx4"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "xOSo9VASB3k"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "e6KQzdGODpA"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "fp3Rf5lBEWg"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "BCGbmGi1g7Y"
+    },
+    {
+      "nome": "312321321",
+      "email": "32131321",
+      "senha": "123213312",
+      "cpf": "3123123",
+      "dataDeNascimento": "0001-03-31",
+      "id": "-a2dspf75v8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

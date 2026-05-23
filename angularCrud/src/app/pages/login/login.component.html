@@ -1,13 +1,10 @@
 <div class="login-layout">
   <aside class="login-side-panel" aria-label="Informações da plataforma">
-    <a routerLink="/" class="brand-logo">NEXORA</a>
     <div class="login-side-panel-content">
       <h2>Gerencie seus produtos com confiança.</h2>
       <p>Plataforma completa para catálogo, estoque e vitrine digital.</p>
       <div class="login-side-panel-stats">
-        <div><span class="login-stat-value">186</span><span class="login-stat-label">Produtos</span></div>
-        <div><span class="login-stat-value">2.3k</span><span class="login-stat-label">Em estoque</span></div>
-        <div><span class="login-stat-value">99%</span><span class="login-stat-label">Uptime</span></div>
+
       </div>
     </div>
     <div class="login-side-panel-decoration" aria-hidden="true"></div>
@@ -19,29 +16,33 @@
         <h1>Bem-vindo de volta</h1>
         <p>Entre com suas credenciais para acessar o painel.</p>
       </header>
+
+      
       <form class="login-form" (submit)="$event.preventDefault()" novalidate>
+        
+        
         <div class="form-field">
           <label for="login-email">E-mail</label>
           <div class="form-input-wrap">
-            <span class="form-input-icon" aria-hidden="true">✉</span>
-            <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email" required />
+            <input name="login" type="email" id="login-email" placeholder="seu@email.com" autocomplete="email" required [(ngModel)] = "login"/>
           </div>
         </div>
+
+
         <div class="form-field">
           <label for="login-senha">Senha</label>
           <div class="form-input-wrap">
-            <span class="form-input-icon" aria-hidden="true">🔑</span>
-            <input type="password" id="login-senha" placeholder="••••••••" autocomplete="current-password" required />
+            <input name="senha" type="password" id="login-senha" placeholder="••••••••" autocomplete="current-password" required [(ngModel)] = "senha"/>
           </div>
         </div>
-        <div class="form-checkbox-row">
-          <input type="checkbox" id="login-lembrar-sessao" />
-          <label for="login-lembrar-sessao">Lembrar de mim</label>
-        </div>
-        <a routerLink="/admin/produtos" class="btn btn--primary btn--full btn--lg">Entrar</a>
+
+        <button class="btn btn--primary btn--full btn--lg"
+                (click)="clicarLogin()"
+        > Entrar</button>
+
       </form>
       <div class="login-divider"><span>ou</span></div>
-      <p class="login-footer-text">Não tem conta? <a href="#" class="link-accent">Fale com o administrador</a></p>
+      <p class="login-footer-text">Não tem conta? <a routerLink="/cadastrar" class="link-accent" >Cadastrar</a></p>
     </div>
   </main>
 </div>

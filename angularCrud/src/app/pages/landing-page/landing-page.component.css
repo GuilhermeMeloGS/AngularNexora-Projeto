@@ -1,82 +1,304 @@
 .landing-hero {
     position: relative;
+
     min-height: calc(100vh - var(--nav-h));
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
+
     align-items: center;
-    gap: 48px;
+
+    gap: 40px;
+
     padding: 80px;
-    background: linear-gradient(135deg, #fafafa 0%, #f0f0fb 100%);
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(232, 67, 147, .12),
+            transparent 35%),
+
+        radial-gradient(circle at bottom right,
+            rgba(108, 92, 231, .12),
+            transparent 35%),
+
+        linear-gradient(135deg,
+            #fafafa 0%,
+            #f3f3ff 100%);
+}
+
+.landing-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        radial-gradient(circle,
+            rgba(232, 67, 147, .15),
+            transparent 70%);
+
+    top: -120px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    filter: blur(30px);
 }
 
 .landing-hero-texture {
     position: absolute;
     inset: 0;
+
     pointer-events: none;
+
     opacity: .03;
+}
+
+.landing-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
 }
 
 .landing-hero-badge {
     display: inline-block;
+
     font-family: var(--font-display);
-    font-size: .8rem;
+
+    font-size: .85rem;
     font-weight: 700;
+
     color: var(--clr-accent);
+
     background: rgba(232, 67, 147, .08);
+
     border: 1px solid rgba(232, 67, 147, .25);
-    padding: 6px 16px;
+
+    padding: 8px 18px;
+
     border-radius: 100px;
-    margin-bottom: 24px;
+
+    margin-bottom: 32px;
 }
 
 .landing-hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 5vw, 4.4rem);
+
+    font-size: clamp(4rem, 8vw, 6.5rem);
+
     font-weight: 800;
-    line-height: 1.08;
-    margin-bottom: 24px;
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 32px;
+
+    color: #17172f;
 }
 
 .landing-hero-title em {
     font-style: normal;
-    color: var(--clr-accent);
+
+    background:
+        linear-gradient(135deg,
+            #e84393,
+            #fd79a8);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .landing-hero-description {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+
+    line-height: 1.8;
+
     color: var(--clr-text-muted);
-    max-width: 480px;
-    margin-bottom: 40px;
+
+    max-width: 700px;
+
+    margin-bottom: 48px;
 }
 
 .landing-hero-actions {
     display: flex;
-    gap: 12px;
+
+    gap: 16px;
+
     flex-wrap: wrap;
 }
 
+.landing-hero-actions .btn {
+    padding: 18px 32px;
+
+    font-size: 1rem;
+}
+
 .landing-hero-visual {
-    position: relative;
     display: flex;
-    align-items: center;
+
     justify-content: center;
-}
-
-.landing-stat-card {
-    position: absolute;
-    display: flex;
     align-items: center;
-    gap: 12px;
-    background: white;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius-lg);
-    padding: 14px 20px;
-    box-shadow: var(--shadow-lg);
+
+    position: relative;
 }
 
-.landing-stat-card--stock {
-    top: 16px;
-    left: -32px;
+.landing-hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    background:
+        radial-gradient(circle,
+            rgba(232,67,147,.18),
+            transparent 70%);
+
+    border-radius: 50%;
+
+    filter: blur(40px);
+
+    z-index: 1;
+}
+
+.hero-dashboard {
+    width: 100%;
+    max-width: 560px;
+
+    background: rgba(255,255,255,.78);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    border-radius: 32px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+    position: relative;
+
+    z-index: 2;
+
+    transform: scale(1.08);
+}
+
+.hero-dashboard-top {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 24px;
+}
+
+.hero-dashboard-top span {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+}
+
+.hero-product-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+}
+
+.hero-product-card h3 {
+    margin-bottom: 4px;
+
+    font-size: 1.05rem;
+
+    color: #17172f;
+}
+
+.hero-product-card p {
+    color: #777;
+
+    font-size: .95rem;
+}
+
+.hero-product-image {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(135deg,
+            #e84393,
+            #fd79a8);
+}
+
+.hero-product-image.second {
+    background:
+        linear-gradient(135deg,
+            #6c5ce7,
+            #8e7dff);
+}
+
+.hero-analytics {
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 24px;
+}
+
+.hero-analytics div {
+    flex: 1;
+
+    background: white;
+
+    padding: 26px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+}
+
+.hero-analytics strong {
+    display: block;
+
+    font-size: 1.8rem;
+
+    margin-bottom: 8px;
+
+    color: #17172f;
+}
+
+.hero-analytics span {
+    color: #777;
+
+    font-size: .95rem;
 }
 
 .landing-features {
@@ -85,38 +307,50 @@
 
 .landing-features-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
 }
 
 .landing-feature-card {
     background: var(--clr-surface-2);
+
     border: 1px solid var(--clr-border);
+
     border-radius: var(--radius-lg);
+
     padding: 32px 28px;
 }
 
 .landing-feature-card--highlight {
-    background: linear-gradient(135deg, #fff0f7, #fff);
+    background:
+        linear-gradient(135deg,
+            #fff0f7,
+            #fff);
 }
 
 .landing-feature-card--dark {
     background: var(--clr-brand);
+
     color: white;
 }
 
 .landing-feature-icon {
     font-size: 2rem;
+
     margin-bottom: 16px;
 }
 
 .landing-featured-products {
     padding: 100px 0;
+
     background: var(--clr-surface-2);
 }
 
 .landing-products-more {
     text-align: center;
+
     margin-top: 40px;
 }
 
@@ -125,32 +359,69 @@
 }
 
 .landing-cta-box {
-    background: linear-gradient(135deg, var(--clr-brand), #2d2d5e);
+    background:
+        linear-gradient(135deg,
+            var(--clr-brand),
+            #2d2d5e);
+
     color: white;
+
     border-radius: var(--radius-xl);
+
     padding: 72px 48px;
+
     text-align: center;
 }
 
 .landing-cta-box h2 {
     font-family: var(--font-display);
+
     font-size: 2.2rem;
+
     font-weight: 800;
+
     margin-bottom: 14px;
 }
 
 .landing-cta-box p {
     color: rgba(255, 255, 255, .7);
+
     margin-bottom: 36px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
     .landing-hero {
         grid-template-columns: 1fr;
-        padding: 48px 24px;
+
+        text-align: center;
+
+        padding: 64px 24px;
+    }
+
+    .landing-hero-content {
+        margin: auto;
+    }
+
+    .landing-hero-actions {
+        justify-content: center;
+    }
+
+    .landing-hero-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .landing-features-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-dashboard {
+        transform: scale(1);
+    }
+
+    .landing-hero-title {
+        font-size: clamp(3.2rem, 10vw, 5rem);
+    }
+
 }

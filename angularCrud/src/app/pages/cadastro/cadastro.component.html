@@ -1,0 +1,88 @@
+<div class="page-cadastro">
+  <div class="lado-esquerdo">
+    <div class="lado-conteudo">
+      <h1>Crie sua conta<br/>e comece agora.</h1>
+      <p>Plataforma completa para catálogo, estoque e vitrine digital.</p>
+    </div>
+  </div>
+
+  <div class="lado-direito">
+    <div class="form-box">
+      <h2>Criar conta</h2>
+      <p class="form-sub">Preencha os dados abaixo para se cadastrar.</p>
+
+      <form>
+
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input
+            id="nome"
+            type="text"
+            placeholder="Seu nome completo"
+            [(ngModel)]="usuario.nome"
+            name="nome"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="seu@email.com"
+            [(ngModel)]="usuario.email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input
+            id="senha"
+            type="password"
+            placeholder="••••••••"
+            [(ngModel)]="usuario.senha"
+            name="senha"
+            required
+          />
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input
+              id="cpf"
+              type="text"
+              placeholder="000.000.000-00"
+              [(ngModel)]="usuario.cpf"
+              name="cpf"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="dataNascimento">Data de nascimento</label>
+            <input
+              id="dataNascimento"
+              type="date"
+              [(ngModel)]="usuario.dataDeNascimento"
+              name="dataNascimento"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="btn-cadastrar" type="submit" (click)="cadastrar()">
+          Cadastrar
+        </button>
+
+      </form>
+
+      <div class="divisor"><span>ou</span></div>
+
+      <p class="link-login">Já tem conta? <a routerLink="/login">Entrar</a></p>
+    </div>
+  </div>
+</div>

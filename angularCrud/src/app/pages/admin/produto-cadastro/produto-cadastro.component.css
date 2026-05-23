@@ -1,59 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+}
+
 .admin-page {
-    display: grid;
-    grid-template-columns: var(--sidebar-w) 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background: var(--clr-surface-2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
 }
 
 .admin-main {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 700px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .admin-page-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 36px 40px 0;
-    gap: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
 }
 
 .admin-page-title {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .admin-page-subtitle {
-    color: var(--clr-text-muted);
-    font-size: .9rem;
-    margin-top: 4px;
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 8px;
 }
 
 .admin-content {
-    padding: 32px 40px 60px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    padding: 40px;
 }
 
 .admin-product-form {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
 }
 
 .admin-form-section {
-    background: white;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
+    border: none;
+    padding: 0;
 }
 
 .admin-form-section-title {
-    font-family: var(--font-display);
+    font-size: 1.3rem;
     font-weight: 700;
+    color: #333;
     margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--clr-border);
+    padding-bottom: 12px;
+    border-bottom: 2px solid #667eea;
 }
 
 .admin-form-grid {
@@ -62,55 +86,101 @@
     gap: 20px;
 }
 
-.admin-image-upload {
-    border: 2px dashed var(--clr-border);
-    border-radius: var(--radius-lg);
-    padding: 52px 32px;
-    text-align: center;
-    position: relative;
-    background: var(--clr-surface-2);
-}
-
-.admin-image-upload-input {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-}
-
-.admin-toggle-group {
+.admin-form-grid div {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 8px;
 }
 
-.admin-toggle-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.admin-toggle-label {
-    display: block;
+label {
     font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
 }
 
-.admin-toggle-description {
-    font-size: .82rem;
-    color: var(--clr-text-muted);
+input {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+input:hover {
+    border-color: #aaa;
 }
 
 .admin-form-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    padding-top: 8px;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.btn-salvar {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-salvar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-salvar:active {
+    transform: translateY(0);
+}
+
+.btn-cancelar {
+    padding: 14px 32px;
+    background: white;
+    color: #666;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-cancelar:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
 }
 
 @media (max-width: 768px) {
     .admin-form-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .admin-content {
+        padding: 24px;
+    }
+    
+    .admin-page-title {
+        font-size: 1.5rem;
+    }
+    
+    .admin-form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-salvar, .btn-cancelar {
+        width: 100%;
+        text-align: center;
     }
 }
