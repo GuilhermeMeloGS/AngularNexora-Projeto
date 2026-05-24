@@ -2,9 +2,10 @@
   <a routerLink="/" class="brand-logo">NEXORA</a>
 
   <ul class="landing-nav-links">
-    <li><a routerLink="/" fragment="secao-produtos-destaque">Produtos</a></li>
-    <li><a routerLink="/" fragment="secao-beneficios">Sobre</a></li>
-    <li><a routerLink="/" fragment="secao-chamada-acao">Contato</a></li>
+    <li><a routerLink="/">Início</a></li>
+    <li><a routerLink="/produtos">Produtos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
     <li *ngIf="isAdmin">
       <a routerLink="/admin" class="nav-admin">Administrador</a>
     </li>
@@ -13,13 +14,13 @@
   <div class="landing-header-actions">
     <!-- Não logado -->
     <ng-container *ngIf="!isLogado">
-      <a routerLink="/login"    class="btn btn--secondary">Entrar</a>
-      <a routerLink="/cadastrar" class="btn btn--primary">Começar</a>
+      <a routerLink="/login" class="btn btn--secondary">Entrar</a>
+      <a routerLink="/cadastrar" class="btn btn--primary">Cadastrar</a>
     </ng-container>
 
     <!-- Logado -->
     <ng-container *ngIf="isLogado">
-      <a routerLink="/admin/produtos" class="btn btn--secondary">Ver Produtos</a>
+      <a routerLink="/produtos" class="btn btn--secondary">Ver Produtos</a>
       <button class="btn btn--primary" (click)="sair()">Sair</button>
     </ng-container>
   </div>

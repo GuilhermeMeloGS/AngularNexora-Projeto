@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // <-- Importado aqui
 import { CadastroPessoaService, Usuarios } from '../../../services/cadastro-pessoa.service';
 
 @Component({
   selector: 'app-usuarios',
   standalone: true,
-  imports: [],
+  imports: [CommonModule], // <-- Adicionado aqui para liberar o *ngIf
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
@@ -24,5 +25,4 @@ export class UsuariosComponent implements OnInit {
       })
     }
   }
-
 }

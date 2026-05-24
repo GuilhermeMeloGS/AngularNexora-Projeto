@@ -1,7 +1,7 @@
 <div class="pageProduto">
   <div class="header-lista">
     <h2>Listagem de Produtos</h2>
-    <button *ngIf="isAdmin" class="btn-novo" [routerLink]="['/admin/produtos/cadastro']">
+    <button class="btn-novo" [routerLink]="isAdmin ? '/admin/produtos/cadastro' : '/produtos/cadastro'">
       + Adicionar Produto
     </button>
   </div>
@@ -23,19 +23,14 @@
         <td>{{ p.descricao }}</td>
         <td>R$ {{ p.preco | number:'1.2-2' }}</td>
         <td *ngIf="isAdmin">
-          <button
-            class="btn-editar"
-            [routerLink]="['/admin/produtos/cadastro', p.id]">
+          <button class="btn-editar" [routerLink]="'/admin/produtos/editar/' + p.id">
             Editar
           </button>
-          <button
-            class="btn-excluir"
-            (click)="excluir(p.id!)">
+          <button class="btn-excluir" (click)="excluir(p.id!)">
             Excluir
           </button>
         </td>
       </tr>
-
       <tr *ngIf="listaProdutos.length === 0">
         <td colspan="5" style="text-align: center;">Nenhum produto encontrado.</td>
       </tr>
