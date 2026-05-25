@@ -10,6 +10,7 @@
     <thead>
       <tr>
         <th>ID</th>
+        <th>Imagem</th>
         <th>Nome</th>
         <th>Descrição</th>
         <th>Preço</th>
@@ -19,6 +20,10 @@
     <tbody>
       <tr *ngFor="let p of listaProdutos">
         <td>{{ p.id }}</td>
+        <td>
+          <img *ngIf="p.imagem" [src]="p.imagem" alt="{{ p.nome }}" class="produto-thumb">
+          <div *ngIf="!p.imagem" class="produto-thumb-vazio">Sem imagem</div>
+        </td>
         <td>{{ p.nome }}</td>
         <td>{{ p.descricao }}</td>
         <td>R$ {{ p.preco | number:'1.2-2' }}</td>
@@ -32,7 +37,7 @@
         </td>
       </tr>
       <tr *ngIf="listaProdutos.length === 0">
-        <td colspan="5" style="text-align: center;">Nenhum produto encontrado.</td>
+        <td colspan="6" style="text-align: center;">Nenhum produto encontrado.</td>
       </tr>
     </tbody>
   </table>

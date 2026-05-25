@@ -15,25 +15,35 @@ import { CommonModule } from '@angular/common';
 export class ProdutoCadastroComponent implements OnInit {
 
   produto: Produto = { nome: '', descricao: '', preco: 0 };
-  idAlterar: number | null = null;
+  idAlterar?: number | null = null;
 
   constructor(
     private service: ProdutoService,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id) {
-      this.idAlterar = Number(id);
-      this.service.buscarPorId(this.idAlterar).subscribe(dados => {
+      this.idAlterar = id;
+      this.service.buscarPorId(id).subscribe(dados => {
         this.produto = dados;
       });
     }
   }
-
+  onImagemSelecionada(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.produto.imagem = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
   submeter() {
     if (this.idAlterar) {
       this.service.editar(this.idAlterar, this.produto).subscribe({

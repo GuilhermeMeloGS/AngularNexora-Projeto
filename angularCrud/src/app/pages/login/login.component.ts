@@ -24,13 +24,14 @@ export class LoginComponent {
   erro:  string = '';
 
   clicarLogin(): void {
-    this.service.buscarPorEmailESenha(this.login, this.senha).subscribe(usuarios => {
+    this.authService.autentificar(this.login, this.senha).subscribe(usuarios => {
       if (usuarios.length > 0) {
         this.authService.salvarUsuario(usuarios[0]); // salva no localStorage
 
         if (this.authService.isAdmin()) {
           this.router.navigate(['/admin']);
-        } else {
+        }
+        else if(this.authService.isUser()){
           this.router.navigate(['/']);
         }
       } else {

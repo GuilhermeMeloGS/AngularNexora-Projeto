@@ -2,12 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 .pageProduto {
     min-height: 100vh;
-    width: 100%; 
+    width: 100%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 100px 20px;
 }
@@ -26,6 +25,7 @@
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -36,7 +36,7 @@
     color: white;
     font-size: 2rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-novo {
@@ -54,7 +54,7 @@
 
 .btn-novo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .tabela-crud {
@@ -64,7 +64,7 @@
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.6s ease;
 }
 
@@ -86,6 +86,7 @@
     padding: 16px;
     border-bottom: 1px solid #f0f0f0;
     color: #333;
+    vertical-align: middle;
 }
 
 .tabela-crud tbody tr:hover {
@@ -94,6 +95,27 @@
 
 .tabela-crud tbody tr:last-child td {
     border-bottom: none;
+}
+
+.produto-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.produto-thumb-vazio {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #999;
+    text-align: center;
 }
 
 .btn-editar {
@@ -134,19 +156,16 @@
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
-/* Coluna de preço */
-.tabela-crud tbody td:nth-child(4) {
+.tabela-crud tbody td:nth-child(5) {
     font-weight: 700;
     color: #667eea;
 }
 
-/* Coluna ID */
 .tabela-crud tbody td:first-child {
     color: #999;
     font-weight: 600;
 }
 
-/* Mensagem de vazio */
 .tabela-crud tbody td[colspan] {
     text-align: center;
     padding: 40px;
@@ -160,16 +179,16 @@
         gap: 16px;
         text-align: center;
     }
-    
+
     .tabela-crud {
         font-size: 0.85rem;
     }
-    
+
     .tabela-crud thead th,
     .tabela-crud tbody td {
         padding: 12px 8px;
     }
-    
+
     .btn-editar,
     .btn-excluir {
         padding: 6px 12px;

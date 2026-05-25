@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Produto {
-  id?: number;
+  id?: number|number;
   nome: string;
   descricao: string;
   preco: number;
@@ -22,7 +22,7 @@ export class ProdutoService {
     return this.http.get<Produto[]>(this.apiUrl);
   }
 
-  buscarPorId(id: number): Observable<Produto> {
+  buscarPorId(id: number|string): Observable<Produto> {
     return this.http.get<Produto>(`${this.apiUrl}/${id}`);
   }
 
@@ -30,8 +30,9 @@ export class ProdutoService {
     return this.http.post<Produto>(this.apiUrl, produto);
   }
 
-  editar(id: number, produto: Produto): Observable<Produto> {
-    return this.http.put<Produto>(`${this.apiUrl}/${id}`, produto);
+  editar(idAlterar: number, produto: Produto): Observable<Produto> {
+    const url = `${this.apiUrl}/${produto.id}`
+    return this.http.put<Produto>(url,produto);
   }
 
   excluir(id: number): Observable<any> {

@@ -2,10 +2,10 @@
   <a routerLink="/" class="brand-logo">NEXORA</a>
 
   <ul class="landing-nav-links">
-    <li><a routerLink="/">Início</a></li>
-    <li><a routerLink="/produtos">Produtos</a></li>
-    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#secao-sobre">Sobre</a></li>
     <li><a href="#contato">Contato</a></li>
+    <li *ngIf="isLogado" ><a routerLink="/produtos" class="nav-logado">Produtos</a></li>
     <li *ngIf="isAdmin">
       <a routerLink="/admin" class="nav-admin">Administrador</a>
     </li>

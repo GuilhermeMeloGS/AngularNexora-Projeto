@@ -24,10 +24,21 @@ export class CadastroComponent {
   constructor(private service: CadastroPessoaService, private router: Router,
     private route: ActivatedRoute,) { }
 
-  cadastrar() {
-    this.service.incluir(this.usuario).subscribe(() => {
-      this.router.navigate(['/'])
-    })
-  }
+cadastrar() {
+  this.service.listar().subscribe(usuarios => {
+    console.log('usuarios:', usuarios);
+    const novoId = usuarios.length > 0 
+      ? Math.max(...usuarios.map(u => Number(u.id) || 0)) + 1 
+      : 1;
+    console.log('novoId:', novoId);
+
+    const usuarioComId = { ...this.usuario, id: novoId };
+    console.log('usuarioComId:', usuarioComId);
+
+    this.service.incluir(usuarioComId).subscribe(() => {
+      this.router.navigate(['/']);
+    });
+  });
+}
 }
 

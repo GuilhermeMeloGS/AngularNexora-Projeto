@@ -25,8 +25,12 @@
               <input type="number" [(ngModel)]="produto.preco" name="preco" required>
             </div>
             <div>
-              <label>Imagem (URL):</label>
-              <input type="text" [(ngModel)]="produto.imagem" name="imagem">
+              <label>Imagem:</label>
+              <input type="file" accept="image/*" (change)="onImagemSelecionada($event)" name="imagemFile">
+              <div *ngIf="produto.imagem" style="margin-top: 10px;">
+                <img [src]="produto.imagem" alt="Preview"
+                  style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 8px;">
+              </div>
             </div>
           </div>
         </div>

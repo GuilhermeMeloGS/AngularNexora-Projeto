@@ -18,7 +18,7 @@ export class UsuariosComponent implements OnInit {
     this.service.listar().subscribe((usuarios)=>{this.listaUsuarios = usuarios})
   }
 
-  excluir(id: number){
+  excluir(id: number| string){
     if (id){
       this.service.excluir(id).subscribe(()=>{
         window.location.reload()

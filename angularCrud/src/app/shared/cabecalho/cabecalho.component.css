@@ -65,6 +65,15 @@
   opacity: 0.8;
   color: #e84393 !important;
 }
+.nav-logado {
+  color: #667eea !important;
+  font-weight: 700 !important;
+}
+
+.nav-logado:hover {
+  opacity: 0.8;
+  color: #667eea !important;
+}
 
 .landing-header-actions {
   display: flex;

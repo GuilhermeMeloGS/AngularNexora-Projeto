@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Usuarios {
-  id?: number;
+  id?: number | string;
   nome: string;
   cpf: string;
   dataDeNascimento: string;
@@ -29,11 +29,7 @@ export class CadastroPessoaService {
     return this.http.post<Usuarios>(this.apiUrl, usuarios);
   }
 
-  excluir(id: number):Observable<Usuarios>{
-    return this.http.delete<Usuarios>(this.apiUrl + `/${id}`)
-  }
-
-  buscarPorEmailESenha(email: string, senha: string): Observable<Usuarios[]> {
-    return this.http.get<Usuarios[]>(`${this.apiUrl}?email=${email}&senha=${senha}`);
+  excluir(id: number | string): Observable<Usuarios> {
+    return this.http.delete<Usuarios>(this.apiUrl + `/${id}`);
   }
 }

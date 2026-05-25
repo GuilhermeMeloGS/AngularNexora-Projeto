@@ -1,53 +1,111 @@
-<div class="landing-page">
+<div class="landing-page" id="inicio">
+
+  <!-- HERO -->
   <section class="landing-hero">
     <div class="landing-hero-texture"></div>
     <div class="landing-hero-content">
-      <span class="landing-hero-badge">✦ Gestão inteligente de estoque</span>
-      <h1 class="landing-hero-title">Seus produtos,<br /><em>organizados.</em></h1>
+      <span class="landing-hero-badge">✦ Equipamentos para alta performance</span>
+      <h1 class="landing-hero-title">Treine mais.<br /><em>Evolua sempre.</em></h1>
       <p class="landing-hero-description">
-        Gerencie catálogos, controle estoque e divulgue produtos com uma plataforma moderna e responsiva.
+        Conheça o catálogo completo de equipamentos e acessórios da Nexora — desenvolvidos para quem leva a academia a
+        sério.
       </p>
       <div class="landing-hero-actions">
-        <a routerLink="/login" class="btn btn--primary btn--lg">Acessar plataforma</a>
+        <a routerLink="/produtos" class="btn btn--primary btn--lg">Ver catálogo</a>
+        <a href="#secao-sobre" class="btn btn--secondary btn--lg">Sobre nós</a>
       </div>
     </div>
-    <div class="landing-hero-visual">
+      </section>
 
-    </div>
-  </section>
-
-  <section class="landing-features" id="secao-beneficios">
+  <!-- CATEGORIAS -->
+  <section class="landing-categorias">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Por que Nexora?</span>
-        <h2 class="section-title">Tudo que você precisa em um só lugar</h2>
+        <span class="section-tag">Nosso catálogo</span>
+        <h2 class="section-title">Produtos para cada tipo de treino</h2>
       </div>
-      <div class="landing-features-grid">
-        <article class="landing-feature-card">
-          <h3>Catálogo completo</h3>
-          <p>Cadastre e organize seus produtos com descrição, imagem, categoria e preço.</p>
+      <div class="landing-categorias-grid">
+        <article class="categoria-card">
+          <div class="categoria-icon">🏋️</div>
+          <h3>Musculação</h3>
+          <p>Halteres, barras, anilhas, luvas e acessórios para treino de força.</p>
         </article>
-        <article class="landing-feature-card landing-feature-card--highlight">
-          <h3>Controle de estoque</h3>
-          <p>Atualize quantidades em tempo real e receba alertas de estoque baixo.</p>
+        <article class="categoria-card categoria-card--highlight">
+          <div class="categoria-icon">👟</div>
+          <h3>Calçados</h3>
+          <p>Tênis para corrida, crossfit e treino funcional com máximo conforto.</p>
         </article>
-        <article class="landing-feature-card landing-feature-card--dark">
-          <h3>Rápido e modular</h3>
-          <p>Arquitetura Angular modular para escalar com a sua empresa.</p>
+        <article class="categoria-card categoria-card--dark">
+          <div class="categoria-icon">🧘</div>
+          <h3>Yoga & Pilates</h3>
+          <p>Tapetes, blocos, faixas e tudo para práticas de relaxamento e flexibilidade.</p>
+        </article>
+        <article class="categoria-card">
+          <div class="categoria-icon">🎽</div>
+          <h3>Vestuário</h3>
+          <p>Camisetas, bermudas e leggings de alta performance para o seu treino.</p>
+        </article>
+        <article class="categoria-card categoria-card--highlight">
+          <div class="categoria-icon">💧</div>
+          <h3>Hidratação</h3>
+          <p>Garrafas térmicas e coqueteleiras para manter a energia durante o treino.</p>
+        </article>
+        <article class="categoria-card categoria-card--dark">
+          <div class="categoria-icon">⌚</div>
+          <h3>Tecnologia</h3>
+          <p>Smart watches, fones e acessórios tech para monitorar sua evolução.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- SOBRE -->
+  <section class="landing-sobre" id="secao-sobre">
+    <div class="container">
+      <div class="landing-sobre-content">
+        <div class="landing-sobre-texto">
+          <span class="section-tag">Sobre a Nexora</span>
+          <h2 class="section-title">Feitos para quem não para</h2>
+          <p>A Nexora é uma empresa especializada em equipamentos e acessórios para academia. Nascemos da paixão pelo
+            esporte e pela crença de que todo atleta — amador ou profissional — merece acesso a produtos de qualidade.
+          </p>
+          <p>Nosso portfólio reúne itens cuidadosamente selecionados para atender desde iniciantes até atletas de alto
+            rendimento, sempre com foco em durabilidade, conforto e performance.</p>
+          <p>Aqui você encontra tudo o que precisa para transformar seu treino — sem abrir mão do estilo.</p>
+        </div>
+        <div class="landing-sobre-stats">
+          <div class="stat-card">
+            <span class="stat-numero">🏆</span>
+            <span class="stat-titulo">Qualidade garantida</span>
+            <span class="stat-label">Todos os produtos passam por rigoroso controle de qualidade antes de entrar no
+              catálogo.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-numero">💪</span>
+            <span class="stat-titulo">Para todos os níveis</span>
+            <span class="stat-label">Do iniciante ao atleta avançado, temos o equipamento certo para cada fase do seu
+              treino.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-numero">🚚</span>
+            <span class="stat-titulo">Portfólio sempre atualizado</span>
+            <span class="stat-label">Atualizamos constantemente nosso catálogo com os lançamentos mais recentes do
+              mercado fitness.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
+  <!-- CTA -->
   <section class="landing-cta-section" id="secao-chamada-acao">
     <div class="container">
       <div class="landing-cta-box">
-        <h2>Pronto para começar?</h2>
-        <p>Acesse a plataforma e gerencie seu catálogo agora mesmo.</p>
-        <a routerLink="/login" class="btn btn--primary btn--lg">Acessar agora</a>
+        <h2>Pronto para evoluir?</h2>
+        <p>Explore o catálogo completo e encontre os equipamentos ideais para o seu treino.</p>
+        <a routerLink="/produtos" class="btn btn--primary btn--lg">Ver todos os produtos</a>
       </div>
     </div>
   </section>
+
 </div>
