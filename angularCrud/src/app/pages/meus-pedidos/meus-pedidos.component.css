@@ -1,0 +1,246 @@
+﻿.pedidos-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eff6ff 0%, #fafafa 100%);
+    padding: 80px 20px;
+}
+
+.pedidos-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.pedidos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.pedidos-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #17172f;
+}
+
+.btn-continuar {
+    font-size: .9rem;
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-continuar:hover {
+    text-decoration: underline;
+}
+
+/* Estado vazio / carregando */
+.estado-vazio {
+    text-align: center;
+    padding: 80px 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+
+.vazio-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.estado-vazio h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #17172f;
+    margin-bottom: 8px;
+}
+
+.estado-vazio p {
+    color: #6b6b8a;
+    margin-bottom: 24px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+/* Lista de pedidos */
+.pedidos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pedido-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+
+.pedido-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.pedido-cabecalho:hover {
+    background: #f0f7ff;
+}
+
+.pedido-info-principal {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pedido-numero {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #17172f;
+}
+
+.pedido-data {
+    font-size: .85rem;
+    color: #6b6b8a;
+}
+
+.pedido-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.badge-status {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: 4px 10px;
+    border-radius: 100px;
+}
+
+.status-pendente {
+    background: rgba(251, 191, 36, .15);
+    color: #d97706;
+}
+
+.status-aprovado,
+.status-entregue {
+    background: rgba(34, 197, 94, .15);
+    color: #16a34a;
+}
+
+.status-cancelado {
+    background: rgba(239, 68, 68, .15);
+    color: #dc2626;
+}
+
+.pedido-total {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #17172f;
+}
+
+.toggle-icon {
+    font-size: .7rem;
+    color: #6b6b8a;
+    min-width: 12px;
+}
+
+/* Detalhes expandidos */
+.pedido-detalhes {
+    border-top: 1px solid #f0f0f8;
+    padding: 24px;
+    display: flex;
+    gap: 32px;
+}
+
+.detalhe-secao {
+    flex: 1;
+}
+
+.detalhe-secao h4 {
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #6b6b8a;
+    margin-bottom: 12px;
+}
+
+.itens-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.item-linha {
+    display: flex;
+    gap: 8px;
+    font-size: .9rem;
+    color: #17172f;
+}
+
+.item-nome {
+    flex: 1;
+}
+
+.item-qtd {
+    color: #6b6b8a;
+    min-width: 30px;
+}
+
+.item-valor {
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
+}
+
+.total-linha {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1.5px solid #dbeafe;
+    font-size: .9rem;
+    color: #6b6b8a;
+}
+
+.total-linha strong {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #17172f;
+}
+
+.detalhe-secao p {
+    font-size: .88rem;
+    color: #17172f;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .pedido-detalhes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pedidos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

@@ -1,4 +1,4 @@
-.form-field {
+﻿.form-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -37,7 +37,7 @@
 .form-input-wrap input:focus,
 .form-input-wrap select:focus {
   border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px rgba(232, 67, 147, .12);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .12);
 }
 
 .form-input-icon {
@@ -150,9 +150,9 @@ textarea {
 }
 
 .admin-sidebar-link--active {
-  background: rgba(232, 67, 147, .2);
+  background: rgba(59, 130, 246, .2);
   color: var(--clr-accent-lt);
-  border: 1px solid rgba(232, 67, 147, .25);
+  border: 1px solid rgba(59, 130, 246, .25);
 }
 
 .admin-sidebar-logout {

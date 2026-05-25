@@ -1,0 +1,94 @@
+<div class="pedidos-admin-page">
+    <div class="pedidos-admin-container">
+
+        <div class="page-header">
+            <div>
+                <a routerLink="/admin" class="btn-voltar">← Voltar ao painel</a>
+                <h2>📋 Todos os Pedidos</h2>
+                <p>Acompanhe todos os pedidos realizados na plataforma.</p>
+            </div>
+        </div>
+
+        <!-- Cards de resumo -->
+        <div class="resumo-cards" *ngIf="!carregando">
+            <div class="resumo-card">
+                <span class="resumo-valor">{{ totalPedidos }}</span>
+                <span class="resumo-label">Total de pedidos</span>
+            </div>
+            <div class="resumo-card verde">
+                <span class="resumo-valor">R$ {{ totalFaturado | number:'1.2-2' }}</span>
+                <span class="resumo-label">Total faturado</span>
+            </div>
+            <div class="resumo-card amarelo">
+                <span class="resumo-valor">{{ pedidosPendentes }}</span>
+                <span class="resumo-label">Pedidos pendentes</span>
+            </div>
+        </div>
+
+        <div *ngIf="carregando" class="estado-vazio">
+            <p>Carregando pedidos...</p>
+        </div>
+
+        <div *ngIf="!carregando && pedidos.length === 0" class="estado-vazio">
+            <div class="vazio-icon">📭</div>
+            <h3>Nenhum pedido encontrado</h3>
+            <p>Ainda não há pedidos registrados na plataforma.</p>
+        </div>
+
+        <div *ngIf="!carregando && pedidos.length > 0" class="pedidos-lista">
+            <div class="pedido-card" *ngFor="let pedido of pedidos">
+
+                <div class="pedido-cabecalho" (click)="togglePedido(pedido.id)">
+                    <div class="pedido-esquerda">
+                        <span class="pedido-numero">#{{ pedido.id }}</span>
+                        <div class="usuario-info">
+                            <span class="usuario-nome">{{ pedido.usuarioNome }}</span>
+                            <span class="usuario-id">ID: {{ pedido.usuarioId }}</span>
+                        </div>
+                    </div>
+                    <div class="pedido-direita">
+                        <span class="pedido-data">{{ pedido.data | date:'dd/MM/yyyy — HH:mm' }}</span>
+                        <span class="badge-status" [class]="'status-' + pedido.status">{{ pedido.status }}</span>
+                        <span class="pedido-total">R$ {{ pedido.total | number:'1.2-2' }}</span>
+                        <span class="toggle-icon">{{ pedidoExpandido === pedido.id ? '▲' : '▼' }}</span>
+                    </div>
+                </div>
+
+                <div class="pedido-detalhes" *ngIf="pedidoExpandido === pedido.id">
+                    <div class="detalhe-secao">
+                        <h4>Cliente</h4>
+                        <p><strong>{{ pedido.usuarioNome }}</strong></p>
+                        <p class="texto-muted">ID do usuário: {{ pedido.usuarioId }}</p>
+                    </div>
+
+                    <div class="detalhe-secao">
+                        <h4>Itens do pedido</h4>
+                        <div class="itens-lista">
+                            <div class="item-linha" *ngFor="let item of pedido.itens">
+                                <span class="item-nome">{{ item.produto.nome }}</span>
+                                <span class="item-qtd">× {{ item.quantidade }}</span>
+                                <span class="item-valor">R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</span>
+                            </div>
+                        </div>
+                        <div class="total-linha">
+                            <span>Total</span>
+                            <strong>R$ {{ pedido.total | number:'1.2-2' }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="detalhe-secao" *ngIf="pedido.endereco">
+                        <h4>Endereço de entrega</h4>
+                        <p>{{ pedido.endereco.rua }}, {{ pedido.endereco.numero }}
+                            <span *ngIf="pedido.endereco.complemento"> — {{ pedido.endereco.complemento }}</span>
+                        </p>
+                        <p>{{ pedido.endereco.bairro }}</p>
+                        <p>{{ pedido.endereco.cidade }} / {{ pedido.endereco.estado }}</p>
+                        <p>CEP: {{ pedido.endereco.cep }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

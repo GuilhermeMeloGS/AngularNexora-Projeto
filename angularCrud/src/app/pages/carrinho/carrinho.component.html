@@ -1,14 +1,139 @@
 <div class="carrinho-page">
     <div class="carrinho-container">
 
-        <div *ngIf="pedidoFinalizado" class="pedido-sucesso">
+        <!-- PASSO 3: PEDIDO CONFIRMADO -->
+        <div *ngIf="pedidoFinalizado && pedidoRealizado" class="pedido-sucesso">
             <div class="sucesso-icon">✅</div>
             <h2>Pedido realizado com sucesso!</h2>
-            <p>Seu pedido foi registrado e está sendo processado.</p>
+            <p class="sucesso-sub">Seu pedido <strong>#{{ pedidoRealizado.id }}</strong> foi registrado e está sendo processado.</p>
+
+            <div class="pedido-resumo">
+                <div class="resumo-bloco">
+                    <h3>Itens do pedido</h3>
+                    <div class="resumo-itens">
+                        <div class="resumo-item" *ngFor="let item of pedidoRealizado.itens">
+                            <span class="resumo-item-nome">{{ item.produto.nome }} <em>× {{ item.quantidade }}</em></span>
+                            <span class="resumo-item-valor">R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</span>
+                        </div>
+                    </div>
+                    <div class="resumo-total">
+                        <span>Total pago</span>
+                        <strong>R$ {{ pedidoRealizado.total | number:'1.2-2' }}</strong>
+                    </div>
+                </div>
+
+                <div class="resumo-bloco" *ngIf="pedidoRealizado.endereco">
+                    <h3>Endereço de entrega</h3>
+                    <div class="resumo-endereco-info">
+                        <p>{{ pedidoRealizado.endereco.rua }}, {{ pedidoRealizado.endereco.numero }}
+                            <span *ngIf="pedidoRealizado.endereco.complemento"> — {{ pedidoRealizado.endereco.complemento }}</span>
+                        </p>
+                        <p>{{ pedidoRealizado.endereco.bairro }}</p>
+                        <p>{{ pedidoRealizado.endereco.cidade }} / {{ pedidoRealizado.endereco.estado }}</p>
+                        <p>CEP: {{ pedidoRealizado.endereco.cep }}</p>
+                    </div>
+                </div>
+            </div>
+
             <a routerLink="/produtos" class="btn-voltar">Ver mais produtos</a>
         </div>
 
-        <div *ngIf="!pedidoFinalizado">
+        <!-- PASSO 2: FORMULÁRIO DE ENDEREÇO -->
+        <div *ngIf="!pedidoFinalizado && mostrarFormEndereco">
+            <div class="carrinho-header">
+                <h2>📍 Endereço de Entrega</h2>
+                <button class="btn-continuar-link" (click)="mostrarFormEndereco = false">← Voltar ao carrinho</button>
+            </div>
+
+            <div class="endereco-form-card">
+                <div class="form-row">
+                    <div class="form-group form-rua">
+                        <label>Rua / Avenida *</label>
+                        <input [(ngModel)]="endereco.rua" placeholder="Nome da rua ou avenida">
+                    </div>
+                    <div class="form-group form-numero">
+                        <label>Número *</label>
+                        <input [(ngModel)]="endereco.numero" placeholder="Nº">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Complemento</label>
+                        <input [(ngModel)]="endereco.complemento" placeholder="Apto, bloco, casa...">
+                    </div>
+                    <div class="form-group form-cep">
+                        <label>CEP *</label>
+                        <input [(ngModel)]="endereco.cep" placeholder="00000-000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Bairro *</label>
+                        <input [(ngModel)]="endereco.bairro" placeholder="Bairro">
+                    </div>
+                    <div class="form-group">
+                        <label>Cidade *</label>
+                        <input [(ngModel)]="endereco.cidade" placeholder="Cidade">
+                    </div>
+                    <div class="form-group form-estado">
+                        <label>Estado *</label>
+                        <select [(ngModel)]="endereco.estado">
+                            <option value="">UF</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="resumo-mini">
+                    <h4>Resumo do pedido</h4>
+                    <div class="resumo-mini-itens">
+                        <div class="resumo-mini-item" *ngFor="let item of itens">
+                            <span>{{ item.produto.nome }} × {{ item.quantidade }}</span>
+                            <span>R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</span>
+                        </div>
+                    </div>
+                    <div class="resumo-mini-total">
+                        <span>Total:</span>
+                        <strong>R$ {{ total | number:'1.2-2' }}</strong>
+                    </div>
+                </div>
+
+                <button class="btn-finalizar" (click)="finalizar()" [disabled]="!enderecoValido()">
+                    Confirmar Pedido
+                </button>
+            </div>
+        </div>
+
+        <!-- PASSO 1: CARRINHO -->
+        <div *ngIf="!pedidoFinalizado && !mostrarFormEndereco">
             <div class="carrinho-header">
                 <h2>🛒 Meu Carrinho</h2>
                 <a routerLink="/produtos" class="btn-continuar">← Continuar comprando</a>
@@ -47,7 +172,7 @@
                         <span>Total:</span>
                         <strong>R$ {{ total | number:'1.2-2' }}</strong>
                     </div>
-                    <button class="btn-finalizar" (click)="finalizar()">Finalizar Pedido</button>
+                    <button class="btn-finalizar" (click)="irParaEndereco()">Finalizar Pedido</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
-.carrinho-page {
+﻿.carrinho-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f3f3ff 0%, #fafafa 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #fafafa 100%);
     padding: 80px 20px;
 }
 
@@ -24,7 +24,7 @@
 
 .btn-continuar {
     font-size: .9rem;
-    color: #6c5ce7;
+    color: #3b82f6;
     font-weight: 600;
 }
 
@@ -88,7 +88,7 @@
 .item-preco {
     font-size: .9rem;
     font-weight: 600;
-    color: #6c5ce7;
+    color: #3b82f6;
 }
 
 .item-quantidade {
@@ -113,9 +113,9 @@
 }
 
 .item-quantidade button:hover {
-    background: #6c5ce7;
+    background: #3b82f6;
     color: white;
-    border-color: #6c5ce7;
+    border-color: #3b82f6;
 }
 
 .item-quantidade span {
@@ -175,19 +175,19 @@
 
 .btn-finalizar {
     padding: 14px 36px;
-    background: #e84393;
+    background: #3b82f6;
     color: white;
     border: none;
     border-radius: 12px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 18px rgba(232, 67, 147, .35);
+    box-shadow: 0 4px 18px rgba(59, 130, 246, .35);
     transition: all .2s;
 }
 
 .btn-finalizar:hover {
-    background: #b5206e;
+    background: #2563eb;
     transform: translateY(-1px);
 }
 
@@ -218,13 +218,231 @@
 
 .btn-voltar {
     padding: 14px 32px;
-    background: #6c5ce7;
+    background: #3b82f6;
     color: white;
     border-radius: 12px;
     font-weight: 700;
     transition: all .2s;
+    display: inline-block;
 }
 
 .btn-voltar:hover {
-    background: #5a4dd6;
+    background: #2563eb;
+}
+
+/* ── Botão link "Voltar ao carrinho" no step 2 ── */
+.btn-continuar-link {
+    font-size: .9rem;
+    color: #3b82f6;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-continuar-link:hover {
+    text-decoration: underline;
+}
+
+/* ── Formulário de endereço ── */
+.endereco-form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #6b6b8a;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 14px;
+    border: 1.5px solid #e4e4ee;
+    border-radius: 10px;
+    font-size: .95rem;
+    color: #17172f;
+    background: #fafafa;
+    transition: border-color .2s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+    background: white;
+}
+
+.form-rua {
+    flex: 3;
+}
+
+.form-numero {
+    flex: 1;
+}
+
+.form-cep {
+    flex: 1.2;
+}
+
+.form-estado {
+    flex: .8;
+}
+
+/* ── Mini resumo no step 2 ── */
+.resumo-mini {
+    background: #eff6ff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+
+.resumo-mini h4 {
+    font-size: .9rem;
+    font-weight: 700;
+    color: #6b6b8a;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 12px;
+}
+
+.resumo-mini-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.resumo-mini-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    color: #17172f;
+}
+
+.resumo-mini-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1.5px solid #dbeafe;
+    font-size: 1rem;
+    color: #6b6b8a;
+}
+
+.resumo-mini-total strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #17172f;
+}
+
+/* ── Resumo final do pedido (step 3) ── */
+.sucesso-sub {
+    color: #6b6b8a;
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.pedido-resumo {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto 36px;
+    max-width: 700px;
+    text-align: left;
+}
+
+.resumo-bloco {
+    flex: 1;
+    background: #eff6ff;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.resumo-bloco h3 {
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #6b6b8a;
+    margin-bottom: 14px;
+}
+
+.resumo-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    color: #17172f;
+}
+
+.resumo-item-nome em {
+    color: #6b6b8a;
+    font-style: normal;
+}
+
+.resumo-item-valor {
+    font-weight: 600;
+}
+
+.resumo-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1.5px solid #dbeafe;
+    font-size: .95rem;
+    color: #6b6b8a;
+}
+
+.resumo-total strong {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #17172f;
+}
+
+.resumo-endereco-info p {
+    font-size: .92rem;
+    color: #17172f;
+    line-height: 1.7;
+}
+
+/* Botão desabilitado */
+.btn-finalizar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .pedido-resumo {
+        flex-direction: column;
+    }
 }

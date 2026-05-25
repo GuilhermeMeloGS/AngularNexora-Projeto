@@ -98,24 +98,6 @@
       "email": "guilhermemelogsantos@gmail.com",
       "perfil": "USER",
       "id": "Ckd4wZZxpk8"
-    },
-    {
-      "nome": "asdadsdas",
-      "cpf": "0000000000",
-      "dataDeNascimento": "2001-02-09",
-      "senha": "123",
-      "email": "melo.goncalves@unifesp.br",
-      "perfil": "USER",
-      "id": "D193hBMGFBo"
-    },
-    {
-      "nome": "Guilherme Melo Gonçalves dos Santos",
-      "cpf": "1111111111111111111111111111111",
-      "dataDeNascimento": "1111-11-11",
-      "senha": "123456789",
-      "email": "melo.goncalves@unifesp.br",
-      "perfil": "USER",
-      "id": "K_ZPFZ6cEC0"
     }
   ],
   "pedidos": [
@@ -138,6 +120,95 @@
       "data": "2026-05-25T12:37:17.165Z",
       "status": "pendente",
       "id": "Lt7MMPhxmfE"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "Admin",
+      "itens": [
+        {
+          "produto": {
+            "id": "1",
+            "nome": "Tênis Runner Pro",
+            "descricao": "Tênis esportivo para corrida",
+            "preco": 299.9,
+            "imagem": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
+          },
+          "quantidade": 4
+        }
+      ],
+      "total": 1199.6,
+      "data": "2026-05-25T12:43:34.654Z",
+      "status": "pendente",
+      "id": "XFgigY60VCQ"
+    },
+    {
+      "usuarioId": "Ckd4wZZxpk8",
+      "usuarioNome": "Guilherme Melo",
+      "itens": [
+        {
+          "produto": {
+            "id": "1",
+            "nome": "Tênis Runner Pro",
+            "descricao": "Tênis esportivo para corrida",
+            "preco": 299.9,
+            "imagem": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
+          },
+          "quantidade": 1
+        },
+        {
+          "produto": {
+            "id": "2",
+            "nome": "Mochila Urban",
+            "descricao": "Mochila resistente 30L para o dia a dia",
+            "preco": 189.9,
+            "imagem": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300"
+          },
+          "quantidade": 1
+        },
+        {
+          "produto": {
+            "id": "3",
+            "nome": "Fone Bluetooth X200",
+            "descricao": "Fone sem fio com cancelamento de ruído",
+            "preco": 349.9,
+            "imagem": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300"
+          },
+          "quantidade": 1
+        },
+        {
+          "produto": {
+            "id": "4",
+            "nome": "Camiseta Dry Fit",
+            "descricao": "Camiseta esportiva de secagem rápida",
+            "preco": 79.9,
+            "imagem": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300"
+          },
+          "quantidade": 1
+        },
+        {
+          "produto": {
+            "id": "5",
+            "nome": "Garrafa Térmica 1L",
+            "descricao": "Mantém a temperatura por 12 horas",
+            "preco": 129.9,
+            "imagem": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300"
+          },
+          "quantidade": 1
+        }
+      ],
+      "total": 1049.5,
+      "data": "2026-05-25T13:00:48.902Z",
+      "status": "pendente",
+      "endereco": {
+        "rua": "Rua Cruz Das Almas",
+        "numero": "61",
+        "complemento": "apto 32",
+        "bairro": "Vila Santa Catarina",
+        "cidade": "3828",
+        "estado": "SP",
+        "cep": "04330-060"
+      },
+      "id": "JLr1lGCJLzU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,0 +1,66 @@
+<div class="pedidos-page">
+    <div class="pedidos-container">
+
+        <div class="pedidos-header">
+            <h2>📦 Meus Pedidos</h2>
+            <a routerLink="/produtos" class="btn-continuar">← Continuar comprando</a>
+        </div>
+
+        <div *ngIf="carregando" class="estado-vazio">
+            <p>Carregando seus pedidos...</p>
+        </div>
+
+        <div *ngIf="!carregando && pedidos.length === 0" class="estado-vazio">
+            <div class="vazio-icon">🛍️</div>
+            <h3>Você ainda não fez nenhum pedido</h3>
+            <p>Explore nosso catálogo e encontre algo incrível!</p>
+            <a routerLink="/produtos" class="btn-primary">Ver produtos</a>
+        </div>
+
+        <div *ngIf="!carregando && pedidos.length > 0" class="pedidos-lista">
+            <div class="pedido-card" *ngFor="let pedido of pedidos">
+
+                <div class="pedido-cabecalho" (click)="togglePedido(pedido.id)">
+                    <div class="pedido-info-principal">
+                        <span class="pedido-numero">#{{ pedido.id }}</span>
+                        <span class="pedido-data">{{ pedido.data | date:'dd/MM/yyyy' }}</span>
+                    </div>
+                    <div class="pedido-meta">
+                        <span class="badge-status" [class]="'status-' + pedido.status">{{ pedido.status }}</span>
+                        <span class="pedido-total">R$ {{ pedido.total | number:'1.2-2' }}</span>
+                        <span class="toggle-icon">{{ pedidoExpandido === pedido.id ? '▲' : '▼' }}</span>
+                    </div>
+                </div>
+
+                <div class="pedido-detalhes" *ngIf="pedidoExpandido === pedido.id">
+                    <div class="detalhe-secao">
+                        <h4>Itens do pedido</h4>
+                        <div class="itens-lista">
+                            <div class="item-linha" *ngFor="let item of pedido.itens">
+                                <span class="item-nome">{{ item.produto.nome }}</span>
+                                <span class="item-qtd">× {{ item.quantidade }}</span>
+                                <span class="item-valor">R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}</span>
+                            </div>
+                        </div>
+                        <div class="total-linha">
+                            <span>Total pago</span>
+                            <strong>R$ {{ pedido.total | number:'1.2-2' }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="detalhe-secao" *ngIf="pedido.endereco">
+                        <h4>Endereço de entrega</h4>
+                        <p>{{ pedido.endereco.rua }}, {{ pedido.endereco.numero }}
+                            <span *ngIf="pedido.endereco.complemento"> — {{ pedido.endereco.complemento }}</span>
+                        </p>
+                        <p>{{ pedido.endereco.bairro }}</p>
+                        <p>{{ pedido.endereco.cidade }} / {{ pedido.endereco.estado }}</p>
+                        <p>CEP: {{ pedido.endereco.cep }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

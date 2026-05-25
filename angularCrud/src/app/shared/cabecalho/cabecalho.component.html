@@ -5,7 +5,10 @@
     <li><a href="#inicio">Início</a></li>
     <li><a href="#secao-sobre">Sobre</a></li>
     <li><a href="#contato">Contato</a></li>
-    <li ><a routerLink="/produtos" class="nav-logado">Produtos</a></li>
+    <li><a routerLink="/produtos" class="nav-logado">Produtos</a></li>
+    <li *ngIf="isLogado && !isAdmin">
+      <a routerLink="/meus-pedidos" class="nav-logado">Meus Pedidos</a>
+    </li>
     <li *ngIf="isAdmin">
       <a routerLink="/admin" class="nav-admin">Administrador</a>
     </li>

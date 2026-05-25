@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     padding: 20px;
 }
 
@@ -77,7 +77,7 @@ body {
     color: #333;
     margin-bottom: 24px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #3b82f6;
 }
 
 .admin-form-grid {
@@ -108,7 +108,7 @@ input {
 }
 
 input:focus {
-    border-color: #667eea;
+    border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
@@ -125,7 +125,7 @@ input:hover {
 
 .btn-salvar {
     padding: 14px 32px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
     border: none;
     border-radius: 8px;

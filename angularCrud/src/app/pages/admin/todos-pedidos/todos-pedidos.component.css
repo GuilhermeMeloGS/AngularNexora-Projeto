@@ -1,0 +1,261 @@
+﻿.pedidos-admin-page {
+    min-height: 100vh;
+    background: #f6f6f9;
+    padding: 80px 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.pedidos-admin-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.btn-voltar {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+}
+
+.page-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.page-header p {
+    color: #6b6b8a;
+    font-size: .95rem;
+}
+
+/* Cards de resumo */
+.resumo-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.resumo-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 24px;
+    border: 1px solid #e4e4ee;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resumo-card.verde { border-left: 4px solid #22c98a; }
+.resumo-card.amarelo { border-left: 4px solid #f59e0b; }
+
+.resumo-valor {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    font-family: 'Outfit', sans-serif;
+}
+
+.resumo-label {
+    font-size: .8rem;
+    color: #6b6b8a;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+/* Estado vazio */
+.estado-vazio {
+    text-align: center;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e4e4ee;
+}
+
+.vazio-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.estado-vazio h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.estado-vazio p { color: #6b6b8a; }
+
+/* Lista */
+.pedidos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pedido-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #e4e4ee;
+    overflow: hidden;
+}
+
+.pedido-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.pedido-cabecalho:hover { background: #f0f7ff; }
+
+.pedido-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pedido-numero {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #1a1a2e;
+    min-width: 60px;
+}
+
+.usuario-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.usuario-nome {
+    font-weight: 700;
+    font-size: .95rem;
+    color: #1a1a2e;
+}
+
+.usuario-id {
+    font-size: .75rem;
+    color: #6b6b8a;
+}
+
+.pedido-direita {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pedido-data {
+    font-size: .8rem;
+    color: #6b6b8a;
+}
+
+.badge-status {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: 4px 10px;
+    border-radius: 100px;
+}
+
+.status-pendente { background: rgba(251,191,36,.15); color: #d97706; }
+.status-aprovado,
+.status-entregue { background: rgba(34,197,94,.15); color: #16a34a; }
+.status-cancelado { background: rgba(239,68,68,.15); color: #dc2626; }
+
+.pedido-total {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a1a2e;
+    min-width: 110px;
+    text-align: right;
+}
+
+.toggle-icon {
+    font-size: .65rem;
+    color: #6b6b8a;
+    min-width: 12px;
+}
+
+/* Detalhes expandidos */
+.pedido-detalhes {
+    border-top: 1px solid #f0f0f8;
+    padding: 24px;
+    display: flex;
+    gap: 32px;
+    background: #f0f7ff;
+}
+
+.detalhe-secao {
+    flex: 1;
+}
+
+.detalhe-secao h4 {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #6b6b8a;
+    margin-bottom: 10px;
+}
+
+.detalhe-secao p {
+    font-size: .88rem;
+    color: #1a1a2e;
+    line-height: 1.7;
+}
+
+.texto-muted { color: #6b6b8a !important; font-size: .82rem !important; }
+
+.itens-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.item-linha {
+    display: flex;
+    gap: 8px;
+    font-size: .88rem;
+    color: #1a1a2e;
+}
+
+.item-nome { flex: 1; }
+.item-qtd { color: #6b6b8a; min-width: 28px; }
+.item-valor { font-weight: 600; min-width: 80px; text-align: right; }
+
+.total-linha {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1.5px solid #dbeafe;
+    font-size: .88rem;
+    color: #6b6b8a;
+}
+
+.total-linha strong {
+    font-size: .95rem;
+    font-weight: 800;
+    color: #1a1a2e;
+}
+
+@media (max-width: 700px) {
+    .resumo-cards { grid-template-columns: 1fr; }
+    .pedido-cabecalho { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .pedido-detalhes { flex-direction: column; gap: 20px; }
+}

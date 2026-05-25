@@ -8,6 +8,16 @@ export interface ItemCarrinho {
     quantidade: number;
 }
 
+export interface Endereco {
+    rua: string;
+    numero: string;
+    complemento?: string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+    cep: string;
+}
+
 export interface Pedido {
     id?: string | number;
     usuarioId: string | number;
@@ -16,6 +26,7 @@ export interface Pedido {
     total: number;
     data: string;
     status: string;
+    endereco?: Endereco;
 }
 
 @Injectable({ providedIn: 'root' })
