@@ -1,11 +1,17 @@
 <div class="pageProduto">
   <div class="header-lista">
     <h2>Listagem de Produtos</h2>
-    <button class="btn-novo" [routerLink]="isAdmin ? '/admin/produtos/cadastro' : '/produtos/cadastro'">
-      + Adicionar Produto
-    </button>
-  </div>
+    <div class="header-acoes">
+      <a routerLink="/carrinho" class="btn-carrinho">
+        🛒 Carrinho ({{ quantidadeCarrinho }})
+      </a>
+      <button class="btn-novo" [routerLink]="isAdmin ? '/admin/produtos/cadastro' : '/produtos/cadastro'">
+        + Adicionar Produto
+      </button>
+    </div>
 
+
+  </div>
   <table class="tabela-crud">
     <thead>
       <tr>
@@ -14,9 +20,11 @@
         <th>Nome</th>
         <th>Descrição</th>
         <th>Preço</th>
+        <th>Comprar</th>
         <th *ngIf="isAdmin">Ações</th>
       </tr>
     </thead>
+
     <tbody>
       <tr *ngFor="let p of listaProdutos">
         <td>{{ p.id }}</td>
@@ -27,6 +35,9 @@
         <td>{{ p.nome }}</td>
         <td>{{ p.descricao }}</td>
         <td>R$ {{ p.preco | number:'1.2-2' }}</td>
+        <td>
+          <button class="btn-carrinho-add" (click)="adicionarAoCarrinho(p)">Adicionar</button>
+        </td>
         <td *ngIf="isAdmin">
           <button class="btn-editar" [routerLink]="'/admin/produtos/editar/' + p.id">
             Editar

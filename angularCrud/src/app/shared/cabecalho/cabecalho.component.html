@@ -5,7 +5,7 @@
     <li><a href="#inicio">Início</a></li>
     <li><a href="#secao-sobre">Sobre</a></li>
     <li><a href="#contato">Contato</a></li>
-    <li *ngIf="isLogado" ><a routerLink="/produtos" class="nav-logado">Produtos</a></li>
+    <li ><a routerLink="/produtos" class="nav-logado">Produtos</a></li>
     <li *ngIf="isAdmin">
       <a routerLink="/admin" class="nav-admin">Administrador</a>
     </li>
@@ -20,7 +20,6 @@
 
     <!-- Logado -->
     <ng-container *ngIf="isLogado">
-      <a routerLink="/produtos" class="btn btn--secondary">Ver Produtos</a>
       <button class="btn btn--primary" (click)="sair()">Sair</button>
     </ng-container>
   </div>

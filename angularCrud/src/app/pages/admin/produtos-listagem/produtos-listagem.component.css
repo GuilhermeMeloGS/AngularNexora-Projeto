@@ -195,3 +195,40 @@
         font-size: 0.75rem;
     }
 }
+
+.header-acoes {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-carrinho {
+    padding: 14px 20px;
+    background: #6c5ce7;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: .95rem;
+    transition: all .2s;
+}
+
+.btn-carrinho:hover {
+    background: #5a4dd6;
+    transform: translateY(-1px);
+}
+
+.btn-carrinho-add {
+    padding: 8px 14px;
+    background: #e84393;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: .82rem;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn-carrinho-add:hover {
+    background: #b5206e;
+}

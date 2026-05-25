@@ -1,0 +1,56 @@
+<div class="carrinho-page">
+    <div class="carrinho-container">
+
+        <div *ngIf="pedidoFinalizado" class="pedido-sucesso">
+            <div class="sucesso-icon">✅</div>
+            <h2>Pedido realizado com sucesso!</h2>
+            <p>Seu pedido foi registrado e está sendo processado.</p>
+            <a routerLink="/produtos" class="btn-voltar">Ver mais produtos</a>
+        </div>
+
+        <div *ngIf="!pedidoFinalizado">
+            <div class="carrinho-header">
+                <h2>🛒 Meu Carrinho</h2>
+                <a routerLink="/produtos" class="btn-continuar">← Continuar comprando</a>
+            </div>
+
+            <div *ngIf="itens.length === 0" class="carrinho-vazio">
+                <p>Seu carrinho está vazio.</p>
+                <a routerLink="/produtos" class="btn-voltar">Ver produtos</a>
+            </div>
+
+            <div *ngIf="itens.length > 0">
+                <div class="carrinho-itens">
+                    <div class="item-card" *ngFor="let item of itens">
+                        <img *ngIf="item.produto.imagem" [src]="item.produto.imagem" [alt]="item.produto.nome"
+                            class="item-img">
+                        <div *ngIf="!item.produto.imagem" class="item-img item-img-vazio">Sem imagem</div>
+                        <div class="item-info">
+                            <h3>{{ item.produto.nome }}</h3>
+                            <p>{{ item.produto.descricao }}</p>
+                            <span class="item-preco">R$ {{ item.produto.preco | number:'1.2-2' }}</span>
+                        </div>
+                        <div class="item-quantidade">
+                            <button (click)="diminuir(item.produto.id!)">−</button>
+                            <span>{{ item.quantidade }}</span>
+                            <button (click)="aumentar(item.produto)">+</button>
+                        </div>
+                        <div class="item-subtotal">
+                            R$ {{ item.produto.preco * item.quantidade | number:'1.2-2' }}
+                        </div>
+                        <button class="btn-remover" (click)="remover(item.produto.id!)">✕</button>
+                    </div>
+                </div>
+
+                <div class="carrinho-rodape">
+                    <div class="carrinho-total">
+                        <span>Total:</span>
+                        <strong>R$ {{ total | number:'1.2-2' }}</strong>
+                    </div>
+                    <button class="btn-finalizar" (click)="finalizar()">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

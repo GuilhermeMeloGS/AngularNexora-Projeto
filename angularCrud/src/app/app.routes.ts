@@ -6,6 +6,8 @@ import { ProdutoCadastroComponent } from './pages/admin/produto-cadastro/produto
 import { UsuariosComponent } from './pages/admin/usuarios/usuarios.component';
 import { AdministradorComponent } from './pages/admin/administrador/administrador.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { AuthService } from './services/autentificar.services';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent, title: 'Nexora — Página inicial' },
@@ -15,6 +17,7 @@ export const routes: Routes = [
   // Rotas para usuário comum (só pode adicionar)
   { path: 'produtos', component: ProdutosListagemComponent, title: 'Nexora — Produtos' },
   { path: 'produtos/cadastro', component: ProdutoCadastroComponent, title: 'Nexora — Cadastrar produto' },
+  { path: 'carrinho', component: CarrinhoComponent},
   
   // Rotas para admin (pode adicionar, editar e excluir)
   { path: 'admin/produtos', component: ProdutosListagemComponent, title: 'Nexora Admin — Produtos' },
